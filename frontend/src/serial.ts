@@ -1,3 +1,6 @@
+import {random} from "lodash-es";
+import {randomInt} from "mathjs";
+
 export type SerialPort = {}
 
 export const serialWriteAndRead = (serialCommand: string, readSerialData: (data: string) => void, serailPorts: SerialPort) => {
@@ -10,7 +13,7 @@ export const getSerialPorts = (_serialPaths: [string, string]) => {
 }
 
 export const serialParseToPos = (_data: string): number => {
-    return 6
+    return randomInt(5, 15)
 }
 
 export const serialClosePorts = (_serialPorts: [string, string]) => {}

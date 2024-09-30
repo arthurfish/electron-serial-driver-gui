@@ -12,6 +12,7 @@
   "dependencies": {
     "apexcharts": "^3.54.0",
     "effect": "^3.8.4",
+    "immutable": "^4.3.7",
     "lodash-es": "^4.17.21",
     "mathjs": "^13.1.1",
     "numjs": "^0.16.1",
