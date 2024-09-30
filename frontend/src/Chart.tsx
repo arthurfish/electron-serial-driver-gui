@@ -2,35 +2,23 @@ import {default as ApexChart} from "react-apexcharts";
 
 
 export default function Chart({height, width, path, trail}: {height: number, width: number, path: Array<[number, number]>, trail: Array<[number, number]>}) {
-    let series = [{data: path}, {data: trail}];
+    let series = [
+        {data: path, name:"path"},
+        {data: trail, name: "trail"},
+    ];
 
     let options: object = {
         chart: {
-            height,
-            width,
             type: 'line',
+            width,
+            height,
         },
         stroke: {
-            width: 5,
+            width: 4,
             curve: 'smooth'
         },
-        xaxis: [{
+        xaxis: {
             type: 'numeric'
-        },{
-            type: 'numeric'
-        }],
-        yaxis: [{
-            title: {text: 'path'}
-        }, {
-            title: {text: 'trail'}
-        }],
-        title: {
-            text: 'Forecast',
-            align: 'left',
-            style: {
-                fontSize: "16px",
-                color: '#666'
-            }
         },
         fill: {
             type: 'gradient',
@@ -46,5 +34,5 @@ export default function Chart({height, width, path, trail}: {height: number, wid
         }
     };
 
-    return <ApexChart type={"line"} options={options} series={series} />;
+    return <ApexChart className={"mx-auto"} type={"line"} options={options} series={series} width={"600"} />;
 }
